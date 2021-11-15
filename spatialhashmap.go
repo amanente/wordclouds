@@ -33,8 +33,7 @@ func (s *spatialHashMap) TestCollision(b *Box, test func(a *Box, b *Box) bool) (
 }
 
 func (s *spatialHashMap) Add(b *Box) {
-	id_temp, _err := uuid.NewV4()
-	id := id_temp.String()
+	id, _err := uuid.NewV4()
 	top, left, right, bottom := s.toGridCoords(b)
 	for i := left; i <= right; i++ {
 		for j := bottom; j <= top; j++ {
